@@ -338,7 +338,7 @@ console.log(randomNumRoundToFloor)    // this gives between 0 and 10
 All this code in one line:
 ```js
 const num = Math.floor(Math.random() * 11) //  Ex: Math.random() creates a random number 0.4 and Math.random() & 11 - then it is multiplied by 11 to get 4.4 and Math.floor - it rounds down to nearest integer to 4. So, Ans is 4
-
+```
 ## Strings
 
 Strings are texts, which are under **_single_**  , **_double_**, **_back-tick_** quote. To declare a string, we need a variable name, assignment operator, a value under a single quote, double quote, or backtick quote.

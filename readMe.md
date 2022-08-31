@@ -378,7 +378,7 @@ Variables are _containers_ of data. Variables are used to _store_ data in a memo
 
 For a variable that changes at a different time, we use _let_. If the data does not change at all, we use _const_. For example, PI, country name, gravity do not change, and we can use _const_. We will not use var in this challenge and I don't recommend you to use it. It is error prone way of declaring variable it has lots of leak.
 
-[I will update detailed explanation of var,let and char from my Google notes app and codemarch twitter post] - FOR MY REFERNCE
+[I will update detailed explanation of var,let and char from my Google notes app, codemarch twitter post and codeinjs insta post] - FOR MY REFERNCE
 
 A valid JavaScript variable name must follow the following rules:
 

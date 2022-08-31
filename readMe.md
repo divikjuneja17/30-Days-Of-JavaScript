@@ -242,7 +242,6 @@ Now, you just wrote your first inline script. We can create a pop up alert messa
 ### Internal Script
 
 The internal script can be written in the _`head`_ or the _`body`_, but it is preferred to put it on the body of the HTML document.
-First, let us write on the head part of the page.
 
 ```html
 <!DOCTYPE html>
@@ -254,50 +253,17 @@ First, let us write on the head part of the page.
     </script>
   </head>
   <body></body>
-</html>
-```
-
-This is how we write an internal script most of the time. Writing the JavaScript code in the body section is the most preferred option. Open the browser console to see the output from the `console.log()`.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>30DaysOfScript:Internal Script</title>
-  </head>
-  <body>
-    <button onclick="alert('Welcome to 30DaysOfJavaScript!');">Click Me</button>
-    <script>
-      console.log('Welcome to 30DaysOfJavaScript')
-    </script>
-  </body>
 </html>
 ```
 
 Open the browser console to see the output from the `console.log()`.
-
-![js code from vscode](./images/js_code_vscode.png)
-
 ### External Script
 
 Similar to the internal script, the external script link can be on the header or body, but it is preferred to put it in the body.
-First, we should create an external JavaScript file with .js extension. All files ending with .js extension are JavaScript files. Create a file named introduction.js inside your project directory and write the following code and link this .js file at the bottom of the body.
+First, we should create an external JavaScript file with .js extension.
 
 ```js
 console.log('Welcome to 30DaysOfJavaScript')
-```
-
-External scripts in the _head_:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>30DaysOfJavaScript:External script</title>
-    <script src="introduction.js"></script>
-  </head>
-  <body></body>
-</html>
 ```
 
 External scripts in the _body_:
@@ -320,9 +286,6 @@ Open the browser console to see the output of the `console.log()`.
 
 ### Multiple External Scripts
 
-We can also link multiple external JavaScript files to a web page.
-Create a `helloworld.js` file inside the 30DaysOfJS folder and write the following code.
-
 ```js
 console.log('Hello, World!')
 ```
@@ -342,11 +305,9 @@ console.log('Hello, World!')
 
 _Your main.js file should be below all other scripts_. It is very important to remember this.
 
-![Multiple Script](./images/multiple_script.png)
-
 ## Introduction to Data types
 
-In JavaScript and also other programming languages, there are different types of data types. The following are JavaScript primitive data types: _String, Number, Boolean, undefined, Null_, and _Symbol_.
+The following are JavaScript primitive data types: _String, Number, Boolean, undefined, Null_, and _Symbol_.
 
 ### Numbers
 
@@ -367,13 +328,7 @@ A collection of one or more characters between two single quotes, double quotes,
 'a'
 'Asabeneh'
 "Asabeneh"
-'Finland'
-'JavaScript is a beautiful programming language'
-'I love teaching'
-'I hope you are enjoying the first day'
 `We can also create a string using a backtick`
-'A string could be just as small as one character or as big as many pages'
-'Any data type under a single quote, double quote or backtick is a string'
 ```
 
 ### Booleans
@@ -417,37 +372,13 @@ console.log(typeof true) // boolean
 console.log(typeof null) // object type
 console.log(typeof undefined) // undefined
 ```
-
-## Comments Again
-
-Remember that commenting in JavaScript is similar to other programming languages. Comments are important in making your code more readable.
-There are two ways of commenting:
-
-- _Single line commenting_
-- _Multiline commenting_
-
-```js
-// commenting the code itself with a single comment
-// let firstName = 'Asabeneh'; single line comment
-// let lastName = 'Yetayeh'; single line comment
-```
-
-Multiline commenting:
-
-```js
-/*
-  let location = 'Helsinki';
-  let age = 100;
-  let isMarried = true;
-  This is a Multiple line comment
-*/
-```
-
 ## Variables
 
 Variables are _containers_ of data. Variables are used to _store_ data in a memory location. When a variable is declared, a memory location is reserved. When a variable is assigned to a value (data), the memory space will be filled with that data. To declare a variable, we use _var_, _let_, or _const_ keywords.
 
-For a variable that changes at a different time, we use _let_. If the data does not change at all, we use _const_. For example, PI, country name, gravity do not change, and we can use _const_. We will not use var in this challenge and I don't recommend you to use it. It is error prone way of declaring variable it has lots of leak. We will talk more about var, let, and const in detail in other sections (scope). For now, the above explanation is enough.
+For a variable that changes at a different time, we use _let_. If the data does not change at all, we use _const_. For example, PI, country name, gravity do not change, and we can use _const_. We will not use var in this challenge and I don't recommend you to use it. It is error prone way of declaring variable it has lots of leak.
+
+[I will update detailed explanation of var,let and char from my Google notes app and codemarch twitter post] - FOR MY REFERNCE
 
 A valid JavaScript variable name must follow the following rules:
 
@@ -518,19 +449,6 @@ Asabeneh Yetayeh Finland Helsinki 100 true
 ```
 
 ```js
-// Declaring variables with number values
-let age = 100 // age in years
-const gravity = 9.81 // earth gravity  in m/s2
-const boilingPoint = 100 // water boiling point, temperature in °C
-const PI = 3.14 // geometrical constant
-console.log(gravity, boilingPoint, PI)
-```
-
-```sh
-9.81 100 3.14
-```
-
-```js
 // Variables can also be declaring in one line separated by comma, however I recommend to use a seperate line to make code more readble
 let name = 'Asabeneh', job = 'teacher', live = 'Finland'
 console.log(name, job, live)
@@ -539,12 +457,6 @@ console.log(name, job, live)
 ```sh
 Asabeneh teacher Finland
 ```
-
-When you run _index.html_ file in the 01-Day folder you should get this:
-
-![Day one](./images/day_1.png)
-
-🌕 You are amazing! You have just completed day 1 challenge and you are on your way to greatness. Now do some exercises for your brain and muscle.
 
 # 💻 Day 1: Exercises
 
@@ -561,10 +473,7 @@ When you run _index.html_ file in the 01-Day folder you should get this:
 9. Declare variables to store your first name, last name, marital status, country and age in a single line
 10. Declare two variables _myAge_ and _yourAge_ and assign them initial values and log to the browser console.
 
-```sh
-I am 25 years old.
-You are 30 years old.
-```
+Link to my exercises: [Replit](https://replit.com/@DivikJuneja/Day1-30DaysJS#index.js)
 
 🎉 CONGRATULATIONS ! 🎉
 

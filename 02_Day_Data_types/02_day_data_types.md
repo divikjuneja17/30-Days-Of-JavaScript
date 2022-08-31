@@ -48,7 +48,7 @@
 
 ## Data Types
 
-In the previous section, we mentioned a little bit about data types. Data or values have data types. Data types describe the characteristics of data. Data types can be divided into two:
+Data types describe the characteristics of data. Data types can be divided into two:
 
 1. Primitive data types
 2. Non-primitive data types(Object References)
@@ -69,7 +69,6 @@ Non-primitive data types in JavaScript includes:
 1. Objects
 2. Arrays
 
-Now, let us see what exactly primitive and non-primitive data types mean.
 *Primitive* data types are immutable(non-modifiable) data types. Once a primitive data type is created we cannot modify it.
 
 **Example:**
@@ -107,7 +106,7 @@ console.log(lightOn == lightOff) // false
 ### Non-Primitive Data Types
 
 *Non-primitive* data types are modifiable or mutable. We can modify the value of non-primitive data types after it gets created.
-Let us see by creating an array. An array is a list of data values in a square bracket. Arrays can contain the same or different data types. Array values are referenced by their index. In JavaScript array index starts at zero. I.e., the first element of an array is found at index zero, the second element at index one, and the third element at index two, etc.
+Let us see by creating an array. An array is a list of data values in a square bracket. Arrays can contain the same or different data types. Array values are referenced by their index. In JavaScript array index starts at zero. i.e., the first element of an array is found at index zero, the second element at index one, and the third element at index two, etc.
 
 ```js
 let nums = [1, 2, 3]
@@ -159,8 +158,6 @@ let userTwo = userOne
 console.log(userOne == userTwo)  // true
 ```
 
-If you have a hard time understanding the difference between primitive data types and non-primitive data types, you are not the only one. Calm down and just go to the next section and try to come back after some time. Now let us start the data types by number type.
-
 ## Numbers
 
 Numbers are integers and decimal values which can do all the arithmetic operations.
@@ -185,21 +182,95 @@ console.log(age, gravity, mass, PI, boilingPoint, bodyTemp)
 
 In JavaScript the Math Object provides a lots of methods to work with numbers.
 
+### Detailed explanation on how to round a number to an integer (whole number) in JavaScript.
+
+JavaScript provides three different methods to achieve this goal: the round() method, the ceil() method and the floor() method.
+
+All of these are static methods of the Math object. This means that they will be called directly via Math.method_name(), not as a method of an instance of Math object - Math has no constructor.
+
+Note: These methods can only be called on numbers, everything else will result in a NaN value. The only exception is when it's called on null - calling methods on null will always return 0.
+
+The ceil() Method
+The name of this method is actually an abbreviation of the word ceiling. Assume it is about ceiling of your room, so it rounds a number UP to the nearest integer.
+
+If the number is an integer already - there's nothing to round, so it'll simply return the integer instead:
+
+```js
+let x = 4.7
+console.log(Math.ceil(x))
+// Output: 5
+
+let y = -3.2
+console.log(Math.ceil(y))
+// Output: -3
+
+let z = "something not a number"
+console.log(Math.ceil(z))
+// Output: NaN
+
+console.log(Math.ceil(null))
+// Output: 0
+```
+
+You'll use ceil() when you specifically want to round to the next upper bound. 5.1 is rounded to 6, so if you want to round to the closest integer, you'll use the round() function.
+
+The floor() Method
+Similar to ceil(), floor()'s method is also carefully chosen to fit its purpose. Assume floor() to be floor of your room, so it rounds the integer DOWN to the nearest integer.
+
+```js
+let x = 4.7
+console.log(Math.floor(x))
+// Output: 4
+
+let y = -3.2
+console.log(Math.floor(y))
+// Output: -4
+
+let z = "something not a number"
+console.log(Math.floor(z))
+// Output: NaN
+
+console.log(Math.floor(null))
+// Output: 0
+```
+
+The round() Method
+The round() method can be viewed as a two-in-one method, containing both ceil() and floor(). It rounds the number to the closest integer - it either "ceils" the number, or "floors" it, based on its value:
+
+```js
+let x = 4.7
+console.log(Math.round(x))
+// Output: 5
+
+let y = 4.2 
+console.log(Math.round(y))
+// Output: 4
+
+let z = 4.5
+console.log(Math.round(z))
+// Output: 5
+
+console.log(Math.round(null))
+// Output: 0
+```
+
+Everything up to x.49 will be rounded down to the lower value, while everything higher than that will be rounded to the higher value.
+
 ```js
 const PI = Math.PI
 
-console.log(PI)                            // 3.141592653589793
+console.log(PI)  // 3.141592653589793
 
-// Rounding to the closest number
-// if above .5 up if less 0.5 down rounding
+// Math.round() - Rounding to the closest number
+// if above .5 up rounding, if less 0.5 down rounding
 
-console.log(Math.round(PI))                // 3 to round values to the nearest number
+console.log(Math.round(PI))  // 3 
 
-console.log(Math.round(9.81))              // 10
+console.log(Math.round(9.81))  // 10
 
-console.log(Math.floor(PI))                // 3 rounding down
+console.log(Math.floor(PI))  // 3 rounding down
 
-console.log(Math.ceil(PI))                 // 4 rounding up
+console.log(Math.ceil(PI))  // 4 rounding up
 
 console.log(Math.min(-5, 3, 20, 4, 5, 10)) // -5, returns the minimum value
 
@@ -224,7 +295,9 @@ console.log(Math.sqrt(2))       // 1.4142135623730951
 // Power
 console.log(Math.pow(3, 2))     // 9
 
-console.log(Math.E)             // 2.718
+console.log(Math.E)             // 2.718, The Math.E property represents Euler's number, the base of natural logarithms, e, which is approximately 2.718.
+
+// Math.E = e ≈ 2.718
 
 // Logarithm
 // Returns the natural logarithm with base E of x, Math.log(x)
@@ -262,6 +335,9 @@ console.log(numBtnZeroAndTen)         // this gives: min 0 and max 10.99
 let randomNumRoundToFloor = Math.floor(numBtnZeroAndTen)
 console.log(randomNumRoundToFloor)    // this gives between 0 and 10
 ```
+All this code in one line:
+```js
+const num = Math.floor(Math.random() * 11) //  Ex: Math.random() creates a random number 0.4 and Math.random() & 11 - then it is multiplied by 11 to get 4.4 and Math.floor - it rounds down to nearest integer to 4. So, Ans is 4
 
 ## Strings
 
@@ -269,7 +345,7 @@ Strings are texts, which are under **_single_**  , **_double_**, **_back-tick_**
 Let's see some examples of strings:
 
 ```js
-let space = ' '           // an empty space string
+let space = ' '   // an empty space string
 let firstName = 'Asabeneh'
 let lastName = 'Yetayeh'
 let country = 'Finland'
@@ -392,7 +468,7 @@ To create a template strings, we use two back-ticks. We can inject data as expre
 **Example: 1**
 
 ```js
-console.log(`The sum of 2 and 3 is 5`)              // statically writing the data
+console.log(`The sum of 2 and 3 is 5`)   // statically writing the data
 let a = 2
 let b = 3
 console.log(`The sum of ${a} and ${b} is ${a + b}`) // injecting the data dynamically

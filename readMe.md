@@ -248,11 +248,12 @@ The internal script can be written in the _`head`_ or the _`body`_, but it is pr
 <html lang="en">
   <head>
     <title>30DaysOfScript:Internal Script</title>
-    <script>
-      console.log('Welcome to 30DaysOfJavaScript')
-    </script>
   </head>
-  <body></body>
+  <body>
+   <script>
+    console.log('Welcome to 30DaysOfJavaScript')
+   </script>
+  </body>
 </html>
 ```
 

@@ -304,7 +304,7 @@ console.log('Hello, World!')
 </html>
 ```
 
-_Your main.js file should be below all other scripts_. It is very important to remember this.
+_Your main.js file should be below all other scripts as it will override all other above scripts_. It is very important to remember this.
 
 ## Introduction to Data types
 
